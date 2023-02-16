@@ -38,7 +38,7 @@ nvim_tree.setup {
         },
     },
     hijack_netrw = true,
-    open_on_setup = false,
+    --[[ open_on_setup = false, ]]
     ignore_ft_on_setup = {
         "startify",
         "dashboard",
@@ -83,8 +83,8 @@ nvim_tree.setup {
     },
     sync_root_with_cwd = true,
     respect_buf_cwd = true,
-    update_focused_file = {
-        enable = true,
-        update_root = true
-    },
+    --[[ update_focused_file = { ]]
+    --[[     enable = true, ]]
+    --[[     update_root = true ]]
+    --[[ }, ]]
 }

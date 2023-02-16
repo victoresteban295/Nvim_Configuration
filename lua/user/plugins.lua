@@ -75,11 +75,6 @@ return packer.startup(function(use)
     -- Colorscheme NightFox
     use "EdenEast/nightfox.nvim"
 
-    -- use {
-    --    "EdenEast/nightfox.nvim",
-    --    tag = "v1.0.0",
-    -- }
-
     -- Nvim Colorizer (Highights Color Your Using)
     use "norcalli/nvim-colorizer.lua"
  
