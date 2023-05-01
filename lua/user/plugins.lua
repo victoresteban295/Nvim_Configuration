@@ -61,52 +61,60 @@ return packer.startup(function(use)
     use "antoinemadec/FixCursorHold.nvim" -- Needed to fix LSP doc highlight
     use "folke/which-key.nvim" -- Which-Key Plugin (Provides list of commands)
     use "windwp/nvim-ts-autotag" -- Autoclose tag for HTML Tags
-    use "ahmedkhalf/project.nvim" -- Required for ':Telescope projects'
-    use "nvim-telescope/telescope-file-browser.nvim" -- File Browser Extention for Telescope Plugin
+    use "joosepAlviste/nvim-ts-context-commentstring" -- Appropriately Comment out JSX Content
+    use "p00f/nvim-ts-rainbow" -- Rainbow Parentheses (*Archived Repository* FIND REPLACEMENT)
+    use "lewis6991/gitsigns.nvim" -- Gitsigns (Powerful Git Plugin)
+    use "norcalli/nvim-colorizer.lua" -- Highlights Color Hexcode with Coresponding Color
+    use "EdenEast/nightfox.nvim" -- Colorscheme NighFox
 
     -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
     }
-    use "joosepAlviste/nvim-ts-context-commentstring" -- Appropriately Comment out JSX Content
 
+    --[[ -- LSP Plugins ]]
+    --[[ use { ]]
+    --[[     'vonheikemen/lsp-zero.nvim', -- Eliminates Need For LSP Boilerplate Code ]]
+    --[[     branch = 'v2.x', ]]
+    --[[     requires = { ]]
+    --[[]]
+    --[[         -- LSP Support ]]
+    --[[         {'neovim/nvim-lspconfig'}, -- Enables LSP to Communicate with Neovim ]]
+    --[[         { ]]
+    --[[             'williamboman/mason.nvim', -- LSP Package Manager to Easily Install LSP Server & More ]]
+    --[[             run = function() ]]
+    --[[                 pcall(vim.cmd, 'masonupdate') ]]
+    --[[             end, ]]
+    --[[         }, ]]
+    --[[         {'williamboman/mason-lspconfig.nvim'}, -- Bridges the Gap btw mason.nvim & nvim-lspconfig plugins ]]
+    --[[]]
+    --[[         -- Autocompletion ]]
+    --[[         {'hrsh7th/nvim-cmp'},     -- Completion Engine for Neovim ]]
+    --[[         {'hrsh7th/cmp-nvim-lsp'}, -- Engine that provides LSP Snippets ]]
+    --[[         {'L3MON4D3/LuaSnip'},     -- ]]
+    --[[     } ]]
+    --[[ } ]]
 
-    -- Rainbow Parentheses
-    use "p00f/nvim-ts-rainbow"
-
-    -- Colorscheme NightFox
-    use "EdenEast/nightfox.nvim"
-
-    -- Nvim Colorizer (Highights Color Your Using)
-    use "norcalli/nvim-colorizer.lua"
-
+    -- LSP Plugins (Manual Setup)
     use {
-        'vonheikemen/lsp-zero.nvim',
-        branch = 'v2.x',
-        requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {                                      -- Optional
-                'williamboman/mason.nvim',
-                run = function()
-                    pcall(vim.cmd, 'masonupdate')
-                end,
-            },
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},     -- Required
-            {'hrsh7th/cmp-nvim-lsp'}, -- Required
-            {'L3MON4D3/LuaSnip'},     -- Required
-        }
+        "williamboman/mason.nvim", -- LSP Package Manager to Easily Install LSP Server & more
+        "williamboman/mason-lspconfig.nvim", -- Bridges the Gap btw mason.nvim & nvim-lspconfig plugins 
+        "neovim/nvim-lspconfig", -- Enables LSP to Communicate with Neovim
     }
 
-    -- Telescope
-    use "nvim-telescope/telescope.nvim"
+    -- Autocompletion Plugins
+    use "hrsh7th/nvim-cmp" -- Completion Engine for Neovim
+    use "hrsh7th/cmp-nvim-lsp" -- Engine that provides LSP Snippets
+    use "L3MON4D3/LuaSnip"
 
-    -- Gitsigns (Powerful Git Plugin)
-    use "lewis6991/gitsigns.nvim"
+    use "mfussenegger/nvim-jdtls" -- Further Enable jdtls Configuration (To add Lombok)
+
+    -- Telescope & Supporting Plugins
+    use "nvim-telescope/telescope.nvim"
+    use "ahmedkhalf/project.nvim" -- Required for ':Telescope projects' to find project directories
+    use "nvim-telescope/telescope-file-browser.nvim" -- File Browser Extention for Telescope Plugin
+
 
     -- Automatically setup your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
