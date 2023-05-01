@@ -73,29 +73,6 @@ return packer.startup(function(use)
         run = ":TSUpdate"
     }
 
-    --[[ -- LSP Plugins ]]
-    --[[ use { ]]
-    --[[     'vonheikemen/lsp-zero.nvim', -- Eliminates Need For LSP Boilerplate Code ]]
-    --[[     branch = 'v2.x', ]]
-    --[[     requires = { ]]
-    --[[]]
-    --[[         -- LSP Support ]]
-    --[[         {'neovim/nvim-lspconfig'}, -- Enables LSP to Communicate with Neovim ]]
-    --[[         { ]]
-    --[[             'williamboman/mason.nvim', -- LSP Package Manager to Easily Install LSP Server & More ]]
-    --[[             run = function() ]]
-    --[[                 pcall(vim.cmd, 'masonupdate') ]]
-    --[[             end, ]]
-    --[[         }, ]]
-    --[[         {'williamboman/mason-lspconfig.nvim'}, -- Bridges the Gap btw mason.nvim & nvim-lspconfig plugins ]]
-    --[[]]
-    --[[         -- Autocompletion ]]
-    --[[         {'hrsh7th/nvim-cmp'},     -- Completion Engine for Neovim ]]
-    --[[         {'hrsh7th/cmp-nvim-lsp'}, -- Engine that provides LSP Snippets ]]
-    --[[         {'L3MON4D3/LuaSnip'},     -- ]]
-    --[[     } ]]
-    --[[ } ]]
-
     -- LSP Plugins (Manual Setup)
     use {
         "williamboman/mason.nvim", -- LSP Package Manager to Easily Install LSP Server & more
