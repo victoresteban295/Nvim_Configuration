@@ -62,7 +62,7 @@ return packer.startup(function(use)
     use "folke/which-key.nvim" -- Which-Key Plugin (Provides list of commands)
     use "windwp/nvim-ts-autotag" -- Autoclose tag for HTML Tags
     use "joosepAlviste/nvim-ts-context-commentstring" -- Appropriately Comment out JSX Content
-    use "p00f/nvim-ts-rainbow" -- Rainbow Parentheses (*Archived Repository* FIND REPLACEMENT)
+    --[[ use "p00f/nvim-ts-rainbow" -- Rainbow Parentheses (*Archived Repository* FIND REPLACEMENT) ]]
     use "lewis6991/gitsigns.nvim" -- Gitsigns (Powerful Git Plugin)
     use "norcalli/nvim-colorizer.lua" -- Highlights Color Hexcode with Coresponding Color
     use "EdenEast/nightfox.nvim" -- Colorscheme NighFox
@@ -72,6 +72,28 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
     }
+
+    --[[ use { ]]
+    --[[   'VonHeikemen/lsp-zero.nvim', ]]
+    --[[   branch = 'v2.x', ]]
+    --[[   requires = { ]]
+    --[[     -- LSP Support ]]
+    --[[     {'neovim/nvim-lspconfig'},             -- Required ]]
+    --[[     {                                      -- Optional ]]
+    --[[       'williamboman/mason.nvim', ]]
+    --[[       run = function() ]]
+    --[[         pcall(vim.api.nvim_command, 'MasonUpdate') ]]
+    --[[       end, ]]
+    --[[     }, ]]
+    --[[     {'williamboman/mason-lspconfig.nvim'}, -- Optional ]]
+    --[[]]
+    --[[     -- Autocompletion ]]
+    --[[     {'hrsh7th/nvim-cmp'},     -- Required ]]
+    --[[     {'hrsh7th/cmp-nvim-lsp'}, -- Required ]]
+    --[[     {'L3MON4D3/LuaSnip'},     -- Required ]]
+    --[[   } ]]
+    --[[ } ]]
+
 
     -- LSP Plugins (Manual Setup)
     use {
@@ -85,7 +107,15 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-nvim-lsp" -- Engine that provides LSP Snippets
     use "L3MON4D3/LuaSnip"
 
-    use "mfussenegger/nvim-jdtls" -- Further Enable jdtls Configuration (To add Lombok)
+    use "mfussenegger/nvim-jdtls" -- Independent jdtls Configuration (allows us to add Lombok)
+
+    -- Debugging Plugins
+    --[[ use { ]]
+    --[[     "rcarriga/nvim-dap-ui", ]]
+    --[[     requires = {"mfussenegeer/nvim-dap"} ]]
+    --[[ } ]]
+    use "mfussenegger/nvim-dap"
+    use "rcarriga/nvim-dap-ui"
 
     -- Telescope & Supporting Plugins
     use "nvim-telescope/telescope.nvim"

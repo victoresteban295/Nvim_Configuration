@@ -5,7 +5,7 @@
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = {"lua_ls"}
+    ensure_installed = {"lua_ls"},
 })
 
 local on_attach = function (_, _)
@@ -31,7 +31,16 @@ require("lspconfig").lua_ls.setup {
     },
 }
 
+-- NOTE: For Each Server You Use Put It Here
+require("lspconfig").tsserver.setup {}
+require("lspconfig").cssls.setup {}
+require("lspconfig").html.setup {}
+require("lspconfig").jsonls.setup {}
+
+
 -- NOTE-TO-SELF: Don't Uncomment, Adding This Causes 2 LSP Servers to attach to Buffer with Java File
 --[[ require("lspconfig").jdtls.setup { ]]
 --[[     on_attach = on_attach ]]
 --[[ } ]]
+--
+

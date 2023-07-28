@@ -23,4 +23,4 @@ require "plugin_configs.alpha_config"
 require "plugin_configs.whichkey_config"
 require "plugin_configs.project_config"
 require "plugin_configs.lsp_config" -- Lsp Manual Setup
---[[ require "plugin_configs.lsp-zero_config" --Lsp Zero Config ]]
+require "plugin_configs.dap_config"
